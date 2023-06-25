@@ -5,7 +5,7 @@ class TaskRepository {
   }
 
   GetAll (idUSer) {
-    return jsonData.filter(x => x.id_user === idUSer)
+    return this.jsonData.filter(x => x.id_user === idUSer)
   }
 
   GetById (idTask) {
