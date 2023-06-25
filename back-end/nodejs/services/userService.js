@@ -5,16 +5,16 @@ class UserService {
     this.userRepository = new UserRepository()
   }
 
-  GetAll () {
-    return this.userRepository.GetAll()
+  async GetAll () {
+    return await this.userRepository.GetAll()
   }
 
-  GetByID (id) {
+  async GetByID (id) {
     return this.userRepository.GetByID(id)
   }
 
-  DeleteByID (id) {
-    this.userRepository.DeleteById(id)
+  async DeleteByID (id) {
+    await this.userRepository.DeleteById(id)
   }
 }
 
