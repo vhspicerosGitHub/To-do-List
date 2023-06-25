@@ -1,0 +1,4 @@
+interface  user {
+    id:Number
+
+}
