@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "victor hugo saavedra",
+        "mail": "vhspiceros@gmail.com"
+    },
+    {
+        "id": 2,
+        "name": "user2",
+        "mail": "user2@gmail.com"
+    },
+    {
+        "id": 3,
+        "name": "user3",
+        "mail": "user3@gmail.com"
+    },
+    {
+        "id": 4,
+        "name": "user4",
+        "mail": "user4@gmail.com"
+    }
+]
