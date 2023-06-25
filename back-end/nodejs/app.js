@@ -2,8 +2,10 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-const UserServices = require('./services/userService')
-const userServices = new UserServices()
+const UserService = require('./services/userService')
+const TaskService = require('./services/taskService')
+const userService = new UserService()
+const taskService = new TaskService()
 
 // Configurations
 app.set('port', process.env.PORT || 3000)
@@ -14,32 +16,34 @@ app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
-// Nuestro primer WS Get
-app.get('/', (req, res) => {
-  console.log('hola mundo')
-  res.end()
-})
-
 app.get('/users', (_, res) => {
-  res.json(userServices.GetAll())
+  res.json(userService.GetAll())
   res.end()
 })
 
 app.get('/users/:id', (req, res) => {
   const userId = parseInt(req.params.id, 10)
-  res.json(userServices.GetByID(userId))
+  res.json(userService.GetByID(userId))
   res.end()
 })
+
 app.get('/users/:id', (req, res) => {
   const id = parseInt(req.params.id, 10)
-  const user = userServices.GetByID(id)
+  const user = userService.GetByID(id)
   if (user) { res.json(user) } else { res.status(404).send('User not found') }
   res.end()
 })
 
 app.delete('/users/:id', (req, res) => {
   const userId = parseInt(req.params.id, 10)
-  userServices.DelteByID(userId)
+  userService.DelteByID(userId)
+  res.end()
+})
+
+app.get('/tasks/:idUser', (req, res) => {
+  const userId = parseInt(req.params.idUser, 10)
+  const data = res.json(taskService.GetAll(userId))
+  if (data) { res.json(data) } else { res.status(404).send('Data not found') }
   res.end()
 })
 

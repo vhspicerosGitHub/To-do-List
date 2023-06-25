@@ -1,6 +1,6 @@
 const UserRepository = require('../repository/UserRepository')
 
-class userServices {
+class UserService {
   constructor () {
     this.userRepository = new UserRepository()
   }
@@ -18,4 +18,4 @@ class userServices {
   }
 }
 
-module.exports = userServices
+module.exports = UserService

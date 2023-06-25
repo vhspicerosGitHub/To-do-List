@@ -1,4 +1,4 @@
-const jsonData = require('./data.json')
+const jsonData = require('./users.json')
 class UserRepository {
   constructor () {
     this.jsonData = jsonData
