@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
+app.use(require('body-parser').urlencoded({ extended: false }))
 
 // Configurations
 app.set('port', process.env.PORT || 3000)

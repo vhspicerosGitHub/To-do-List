@@ -6,10 +6,13 @@ GET http://localhost:3001/users/1 HTTP/1.1
 
 ###
 
+DELETE  http://localhost:3001/users/6498eaf253374fc640ebba03 HTTP/1.1
+
+###
+
 POST http://localhost:3001/users/ HTTP/1.1
 content-type: application/json
 
 {
-    "name": "test user",
-    "mail": "test@gmail.com"
+    "email":"mail@gmail.com"
 }

@@ -1,19 +1,21 @@
-const jsonData = require('./tasks.json')
+const database = require('../utils/db')
+
 class TaskRepository {
   constructor () {
-    this.jsonData = jsonData
+    this.db = database
+    this.tasksdb = database.collection('users')
   }
 
-  GetAll (idUSer) {
-    return this.jsonData.filter(x => x.id_user === idUSer)
+  async GetAll (idUSer) {
+    return await this.tasksdb.find({ id_user: idUSer })
   }
 
-  GetById (idTask) {
-    return this.jsonData
+  async GetById (idTask) {
+    return await this.tasksdb.find({ id: idTask })
   }
 
-  DeleteById (id) {
-    this.jsonData = this.jsonData.filter(x => x.id !== id)
+  async DeleteById (id) {
+    await this.tasksdb.deleteOne(id)
   }
 }
 

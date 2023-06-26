@@ -5,8 +5,12 @@ class TaskService {
     this.taskRepository = new TaskRepository()
   }
 
-  GetAll (idUser) {
+  async GetAll (idUser) {
     return this.taskRepository.GetAll(idUser)
+  }
+
+  async GetById (idUser) {
+    return this.taskRepository.GetById(idUser)
   }
 }
 

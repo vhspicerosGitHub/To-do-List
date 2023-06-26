@@ -16,6 +16,10 @@ class UserService {
   async DeleteByID (id) {
     await this.userRepository.DeleteById(id)
   }
+
+  async Create (email) {
+    await this.userRepository.Create(email)
+  }
 }
 
 module.exports = UserService
