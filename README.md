@@ -1,2 +1,2 @@
-# To-do-List
-Simple aplicación de To-Do List
+# To-do-List in Node with Javascript
+Simple aplicación de To-Do List with javascript
